@@ -2,16 +2,44 @@
 
 <html lang="ca">
 <head>
+    <!-- Conté la informació pel programador i és obligatori la secció head-->
     <meta charset="UTF-8">
+    <!-- És el document html, escrit en català i amb un conjunt de conectors de caràcters UTF-8 perquè accepti els accens i ç.-->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suma de Vectors Nàutics: Vaixell, Vent i Corrent</title>
     <script>
+        //Les barres inclinades són comentaris de javascript aquest codi que hi ha entre script
+        //és un llenguatge diferent a html, és javascript
+        /*
+        comentari multilínia
+        A sota tenim un codi javascript de configuració de mathjax, que permet renderitzar(visualitzar bé)
+        les fòrmules matemàtiques en una pàgina web. Mathjax utilitza dos tipus de  llenguatge matemàtics:
+        Tex/LaTex i MathML, TeX es pronuncia Tech i LaTeX significa Lamport que és el cognom de la persona que va modificar 
+        Tex per fer-lo més fàcil, MathML és un llenguatge més modern semblant al HTML, ML significa Markup language, 
+        llenguatge de marques. MathML és molt semblant, però és més llarg que LaTeX.
+        
+        */
         window.MathJax = {
+            /*Crea una variable global anomenada Window. Mathjax que es carregarà quan es carregui la pàgina web i farà 
+            que quan tenim les fòrmules en línia  és a dir text normal i una fòrmula en la mateixa hem de escriure
+            al principi un o dos dolars. Potser a la mateixa línia o en el mateix paràgraf sense salts de línia ni centrats.
+        */
+
+
+            
             tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
             svg: { fontCache: 'global' }
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+     <!-- El codi anterior afegeix una bibloteca externa CDN (Content Delivery Network) que és de tipus javascript
+  perquè acaba en script. Cada biblioteca externa serveix per una cosa. La biblioteca mathjax serveix per escriure
+  fòrmules matemàtiques i símbols matemàtics. ltres biblíoteques que utlitzarem durant el curs: bootstrap5 per els menús desplegables,
+  fontawsome per dibuixar símbols predissenyats que es troben  en els menús desplegables, p5.js és una biblíoteca que serveix per
+  dibuixar de forma fàcil, nl5.js signifíca machine learning o aprenentatge per màquina i ens pot servir per reconeixer cares,gestos,
+  poses..El número 5 prové de processing o proce55ing que es deia als antecessors d'aquest progr"ama. Processing és anterior a arduino
+  i arduino deriva d'ell. Podem fer robòtica emprant en llenguatge <a href="https://processing.org"&gt;.
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
         h2 { color: #333; }
