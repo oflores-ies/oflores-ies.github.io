@@ -28,8 +28,10 @@
 
 
             
-            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-            svg: { fontCache: 'global' }
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, 
+            svg: { fontCache: 'global' } //svg vol dir vectors gràfics escalables, es poden fer molt grans o molt petits. 
+           // Les imatges poden ser de dos tipus svg o mapa de bit. Els mapes de bit estàn fets de pixels i són els png o jpg
+           // o gif. Els svg són millors que els mapes de bit, perquè són formules matemàtiques i ens permeten fer dibuixos perfectes.
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
@@ -42,6 +44,11 @@
   i arduino deriva d'ell. Podem fer robòtica emprant en llenguatge <a href="https://processing.org"&gt;.
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    // Hi ha tres grans famílies de lletres sans-serif, serif i monospace.
+    // Serif en francés o internacionalment, serifada o amb adornaments, és quan una lletra té uns remats.
+    // Sans-serif, significa sense serif, és a dir sense adornaments.
+    // Monospace, significa lletra monospaciada que ocupa cada lletra el mateix ample, és útil per codic, perquè els espais en blancs,
+   // poden ser molt importants.
         h2 { color: #333; }
         input[type="number"] { width: 70px; margin-right: 10px; }
         button { padding: 8px 16px; margin-top: 10px; cursor: pointer; }
