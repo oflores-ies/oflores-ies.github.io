@@ -104,18 +104,25 @@
         0 0 0; Se que aquest color de fons és gris, perquè aumento de la mateixa manera i amb el mateix número rgb. Com podria 
         fer el brackground-color d'una altra manera? f9 és un número hexadecimal, multiplicar cada digít de F9 hexadecimal:
         (F9) en base 16= (15x 16 elevat a 0), i en binari es 11111001. El número 249 és decimal i si vull pasar-lo a binari, he 
-        de dividir entre 2 com vam aprendre a quart.*/
+        de dividir entre 2 com vam aprendre a quart. Si la base que volem transformar és 64 o 32 em de utilitzar més lletres del 
+        alfabet*/
        
         .teoria { background: #eef; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
+        /*El punt davant de teoria és una classe, està en la línia 118 i és un divisor, un tors de codi que funciona independent i 
+        que tindrà les característiques de la línia 119, que són: color grisós, marge interior, radi a les cantonades i un marge per 
+          sota.*/
     </style>
 </head>
 <body>
     <h1>Suma de Vectors Nàutics: Vaixell, Vent i Corrent</h1>
+    <!--h1 és la capçalera i té tamany de títol d'apartat molt gran, h2 és més petit, fins a h6 que és el mínim -->
 
 
 <div class="teoria">
     <h2>Recordatori Teòric</h2>
     <p>Per un vector de mòdul $V$ i rumb $\theta$ (en graus):</p>
+    <!--Els dòlars ($) dintre del paràgraf fa que els símbols matemàtics s'expressin en el tipus de lletra MathJax 
+    que és un tipus de LaTex, si volem lletres gregues hem de posar el nom en anglès amb una barra inclinada (\) abans -->
     <ul>
         <li>$\theta_{rad} = \theta \cdot \pi / 180$</li>
         <li>Component horitzontal (X): $V_x = V \cdot \sin(\theta_{rad})$</li>
