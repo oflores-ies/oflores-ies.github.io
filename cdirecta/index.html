@@ -75,7 +75,8 @@
     <label for="a1">Longitud del primer braç (a₁):</label>
  /* Label es tradueix com "etiqueta". És un espai que serveix com a indicador del que s'ha de posar a l'input.*/
    
-    <input type="number" id="a1" value="1" step="0.1"><br><br> /* INput significa una entrada d'informació 
+    <input type="number" id="a1" value="1" step="0.1"><br><br> 
+    /* INput significa una entrada d'informació 
     per part de l'usuari, apareix una caixa de text per escriure que nomès accepta números, perquè type="number", 
     id aignifica identificador únic, és una variable amb referència única, com el DNI, value és el valor per defecte
     especificat, surt aquest a la caixa de text. stpe significa la variació que es pot produir, br és una línia en blanc, 
@@ -93,12 +94,18 @@
   
     <input type="number" id="q2" value="30" step="0.1"><br><br>
 
-    <button onclick="calculatePosition()">Calcula la posició</button>
+  <button onclick="calculatePosition()">Calcula la posició</button>
+  /* La línia 96 relaciona el codi html amb el codi javascript perquè la etiqueta 
+    "button" de html té una propietat anomenada "onlick" que executa uan funció javascript 
+    anomenada "calculatePosition()", trobada a la linía 110 que farà els càlculs matemàtics.*/
   </div>
+  
   <div id="output"></div>
+ 
   <canvas id="robotCanvas" width="400" height="400"></canvas>
+/* La línia 102 són espais buits, fets per divisors (trossos de codi) */
 
-<script>
+  <script>
 function calculatePosition() {
   // Agafar les dades introduïdes per l'usuari
   let a1 = parseFloat(document.getElementById('a1').value);
