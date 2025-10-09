@@ -73,15 +73,13 @@
   <h1>Càlcul de la posició d'un robot amb dos braços</h1>
   <div>
     <label for="a1">Longitud del primer braç (a₁):</label>
- /* Label es tradueix com "etiqueta". És un espai que serveix com a indicador del que s'ha de posar a l'input.*/
+ <!-- Label es tradueix com "etiqueta". És un espai que serveix com a indicador del que s'ha de posar a l'input.-->
    
     <input type="number" id="a1" value="1" step="0.1"><br><br> 
-  
-    /* Input significa una entrada d'informació 
-    per part de l'usuari, apareix una caixa de text per escriure que nomès accepta números, perquè type="number", 
-    id aignifica identificador únic, és una variable amb referència única, com el DNI, value és el valor per defecte
+    <!--Input significa una entrada d'informació per part de l'usuari, apareix una caixa de text per escriure que nomès accepta números, perquè type="number", 
+    id significa identificador únic, és una variable amb referència única, com el DNI, value és el valor per defecte
     especificat, surt aquest a la caixa de text. stpe significa la variació que es pot produir, br és una línia en blanc, 
-    un espai.  */
+    un espai.-->
 
     <label for="a2">Longitud del segon braç (a₂):</label>
  
@@ -115,11 +113,18 @@
   
   // Agafar les dades introduïdes per l'usuari
   let a1 = parseFloat(document.getElementById('a1').value);
-  let a2 = parseFloat(document.getElementById('a2').value);
-  let q1_deg = parseFloat(document.getElementById('q1').value); // Grados
-  let q2_deg = parseFloat(document.getElementById('q2').value); // Grados
-  let q1 = q1_deg * Math.PI / 180; // Convertir graus a radians
-  let q2 = q2_deg * Math.PI / 180; // Convertir graus a radians
+ // let a1 crea un espai a la memòria per emmagatzemar el valor introduït per l'usuari (getElementById('a1')) agafa el valor de a1. 
+   //ParseLoat converteix el número en un floating point number(número decimal). Queda emmagatzemat el que introdueix l'usuari a a1.
+ 
+      let a2 = parseFloat(document.getElementById('a2').value);
+ 
+      let q1_deg = parseFloat(document.getElementById('q1').value); // Grados
+ 
+      let q2_deg = parseFloat(document.getElementById('q2').value); // Grados
+ 
+      let q1 = q1_deg * Math.PI / 180; // Convertir graus a radians
+  
+      let q2 = q2_deg * Math.PI / 180; // Convertir graus a radians
 
   // **Mostrar els contenidors de sortida**
   document.getElementById('output').style.display = 'block';
