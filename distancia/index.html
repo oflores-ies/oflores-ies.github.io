@@ -25,19 +25,24 @@ window.MathJax = {
 body{font-family:Arial,Helvetica,sans-serif;margin:20px;line-height:1.7;color:#123}
   /*La línia 27 canvia els titols grans (h1), titols mitjans (h2), titols petits (h3) a un color blau fosc*/
 h1,h2,h3{color:#0b3d91}
-  /* La línia 32 és una classe que afecta a la línia 120 on s'escriu les formules matemàtiques i fa que les formules tinguin un 
+  /* La línia 32 és una classe que afecta a la línia 135 on s'escriu les formules matemàtiques i fa que les formules tinguin un 
   color gris clar de fons (background), un espais intern dintre de la caixa de la formula perquè no toqui els costats de 12 
   pixels(padding), unes cantonades arrodonides(border-radius),un espai vertical abans i desprès de la caixa (margin) i que 
   el text de la formula estigui dins de la caixa*/
 .formula{background:#f7f7f9;padding:12px;border-radius:6px;margin:10px 0;text-align:center}
-     /* A la línia 36 tenim els estils de la taula generals, que es troba a la línia 54, el Collapse fa que les línies de les 
+     /* A la línia 36 tenim els estils de la taula generals, que es troba a la línia 66, el Collapse fa que les línies de les 
   taules siguin senzilles i no línies dobles ( surten per defecte sempre dobles). El marge dona un espai abans de la taula i 
   desprès de la taula. */    
 table{border-collapse:collapse;margin:10px 0}
   /*td és una cel·la i significa table data o dada de una taula o cel·la i th és table heading que és la primera filera de una 
-  taula. Tant les cel·les normals com les cel·les de les primeres fileres, tenen un espai de 6 pixels.*/
+  taula. Tant les cel·les normals com les cel·les de les primeres fileres, tenen un espai de 6 pixels. El contorn(border) serà 
+  de 1 píxels i sólid perquè podria ser dashed (amb raltes) o dotted(punts). El color ccc és #cccccc, perquè està abreujat.
+  És un gris clar perquè gris és quan els 3 números són iguals. C és un número hexadecimal(12), i el color clar perquè s'aproxima 
+  a #ffffff que és el gris més clar*/
 td,th{padding:6px;border:1px solid #ccc}
+  
 .step{margin:10px 0;padding-left:15px;border-left:3px solid #0b3d91}
+  /*Quan tenim un punt al principi és de css és una classe
 .note{margin:8px 0;padding:8px;background:#fff8dc;border-left:4px solid #ffcc00}
 img {
   max-width: 100%;
@@ -50,7 +55,17 @@ img {
 <h1>Problema de navegació — Tarifa → Ceuta</h1>
 
 <h2>0) Conversió de coordenades (DMS → decimal)</h2>
-<p>Per treballar amb fórmules trigonomètriques, necessitem les coordenades en decimal. A continuació convertim pas a pas.</p>
+<p>Un grau de latitud és constant a tota la Terra i representa aproximadament 60 milles nàutiques
+  (111 km) entre paral·lels, perquè les línies de latitud són paral·leles i equidistants. 
+  En canvi, un grau de longitud varia amb la latitud. A l'equador, un grau de longitud 
+  també correspon a unes 60 milles nàutiques, però a mesura que ens acostem als pols, 
+  la distància entre dos meridians consecutius disminueix, ja que les línies de longitud 
+  convergeixen cap als pols, fins a trobar-se a zero a l'extrem nord i sud. Per calcular 
+  la distància real que correspon a un canvi de longitud en qualsevol latitud, hem de 
+  multiplicar la diferència de longitud pel factor \(\cos(\text{lat\_mitjana})\). Així, encara 
+  que la diferència angular sigui la mateixa, la distància sobre la superfície terrestre depèn de 
+  la latitud, fent que un grau de longitud no sigui equivalent a un grau de latitud fora de l'equador. 
+  Aquesta correcció és essencial per obtenir distàncies precises quan es navega o es fa cartografia.</p>
 
 <h3>Tarifa</h3>
 <table>
@@ -116,7 +131,7 @@ de distància. </p>
 
 <h2>6) Consum i cost de combustible</h2>
 <div class="step">Consum total: $$Q = 18 \times 2.6575 \approx 47.84 L$$</div>
-<div class="step">Cost: $$Cost = 47.84 \times 1.425 \approx 68.17 €$$</div>
+<div class="step">Cost: $$Cost = 47.84 \times 1.425 \approx 68.17 \text{€}$$</div>
 
 <h2>7) Vector de velocitat, corrent i vent (detall pas a pas)</h2>
 <p>Per calcular la trajectòria real de la nau, hem de combinar el vector de velocitat de la nau amb els vectors de corrent i vent...</p>
