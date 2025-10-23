@@ -104,6 +104,11 @@ img {
 
 <div class="step">Latitud en decimal: $$Lat = 35 + \frac{53}{60} + \frac{17.88}{3600} = 35.8883^\circ$$</div>
 <div class="step">Longitud en decimal: $$Lon = (-5 + \frac{18}{60} + \frac{56.16}{3600}) = -5.3156^\circ$$</div>
+  /* Un divisor (div) com el de la línia 105 o 106 és un troç de codi que té un sistema de identificació que pot ser
+  id, en comptes de class= posariem id= i en aquest segon cas només podria haver una sola vegada, per exemple id="step1"
+  i no pot haver repetit "step1" en un altre divisor perquè és un id, en canvi step pot anar repetit ja que no és una id,
+  sinó una classe. Recorda que en el codi css tenim un .step a la línia 44, si tinguessim "step1" com a identificador hauríem
+  de posar a la línia 44 #step1.*/
 
 <h2>1) Diferències angulars</h2>
 <div class="step">$$\Delta \varphi = Lat_{(Ceuta)} - Lat_{(Tarifa)} = -0.1242^\circ$$</div>
