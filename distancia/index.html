@@ -101,6 +101,23 @@ img {
 <tr><th>Latitud (DMS)</th><td>35º 53' 17.88" N</td></tr>
 <tr><th>Longitud (DMS)</th><td>5º 18' 56.16" W</td></tr>
 </table>
+  <!--A continuació veiem diferents codis amb JavaScript emprant la biblioteca MathJax, el doble $$ serveix per avisar al navegador de 
+  continuació el codi és mathJax i l'ha de renderitzar o visualitzar segons el LaTex que és el llenguatge matemàtic.
+  Anem a explicar els diferents símbols, \frac{A}·{B} significa que dividim A entre B (A/B).
+  35,883^\circ significa el ^(sombreret) elevat a i la barra inclinada circ (\circ) significa º el símbol del grau.
+  Si poso \Delta és una delta majúscula que té forma de triangle.
+  \lambda és quest símbol λ, que és una lletra grega que s'utilitza a matemàtiques per expressar la longitud.
+  \varphi és la lletra grega φ, phi i es pronuncia fi i correspon a la latitud.
+  \times aquest és el símbol de multiplicar, x una mica més gran sense arribar a ser una x majúscula.
+  \pi és el símbol π
+  \varphi_{rad} si posem una barra baixa vol dir subíndex i el posem entre claus el que volem que apareixi en subíndex,
+  apareixera la lletra φ amb un subíndex amb la paraula rad perquè volem expressar la latitud no en graus º sinó en radiants
+  que és la unitat del sistema internacional (SI).
+  Si poso lat_{(Tarifa)}, Tarifa serà un subíndex sota la paraula Lat.
+  \text{rad} permet escriure el text normal rad dintre de una MathJax.
+  $$a = \sin^2\left(\frac{\Delta \varphi}{2}\right) + \cos(Lat_{Tarifa} \frac{\pi}{180}) \cos(Lat_{Ceuta} \frac{\pi}{180}) \sin^2\left(\frac{\Delta \lambda}{2}\right)$$
+sin^2 el sombreret és elevat a la 2, \left és per obrir el parentesis esquerra i \right és per tancar el parentesi
+  -->
 
 <div class="step">Latitud en decimal: $$Lat = 35 + \frac{53}{60} + \frac{17.88}{3600} = 35.8883^\circ$$</div>
 <div class="step">Longitud en decimal: $$Lon = (-5 + \frac{18}{60} + \frac{56.16}{3600}) = -5.3156^\circ$$</div>
@@ -108,7 +125,9 @@ img {
   id, en comptes de class= posariem id= i en aquest segon cas només podria haver una sola vegada, per exemple id="step1"
   i no pot haver repetit "step1" en un altre divisor perquè és un id, en canvi step pot anar repetit ja que no és una id,
   sinó una classe. Recorda que en el codi css tenim un .step a la línia 44, si tinguessim "step1" com a identificador hauríem
-  de posar a la línia 44 #step1.*/
+  de posar a la línia 44 #step1.
+  Quina és la funció de la class i del identificador? La class el podem posar més d'un cop i és més general, i el id és un element
+  únic.*/
 
 <h2>1) Diferències angulars</h2>
 <div class="step">$$\Delta \varphi = Lat_{(Ceuta)} - Lat_{(Tarifa)} = -0.1242^\circ$$</div>
