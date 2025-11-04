@@ -8,7 +8,11 @@
 <style>
   body { font-family: Arial, sans-serif; margin: 20px; }
   table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+  /*Border-collapse el que fa és la doble línia per defecte en tta la taula 
+  convertir-la, colapsar-la.*/
   th, td { border: 1px solid #ccc; padding: 5px 10px; text-align: center; }
+  /* El borde és la cantonada que veiem i el que hi ha fora, es diu margin i 
+  el marge que hi ha per dintre és el padding. */
   input, button { padding: 6px; font-size: 14px; margin: 2px; }
   #estat { margin-top: 10px; font-style: italic; color: #555; }
   #map { height: 300px; margin-top: 10px; border: 1px solid #ccc; }
@@ -19,7 +23,30 @@
 <h2>Mesurador de Latitud i Longitud Avançat</h2>
 
 <label><b>Indica el lloc:</b></label>
+  /*És una etiqueta per escriure, que acompanya textbox o caixa de text o 
+  definida per input.
+  L'input de més abaix no accepta números, només accepta text i té un text per 
+  defecte definit per la propietatplaceholder.*/
+  
 <input id="ubicacioInput" type="text" placeholder="Ex: Punt A">
+  /* A continuació tenim tres botons que quan els cliquem s'executen les 
+  funcions de la línia function mesura(){instruccions...} i els altres dos botons
+  cridan les funcions de javascript gràcies a la propietat o atribut onlick.
+  CSV significa comma separated values o valors separats per comes, i és la fomra 
+  més fàcils de guardar dades. Per exemple:
+  latitud, longitud
+  41.2,1
+  41.3,2.2
+  Els que escrit més amunt és un CSV, i és compatible amb excel o llibreofice calc o 
+  qualsevol programa de dades o taules.
+  Creem una funció anomenada function exportCSV(){instruccions que guarden les dades 
+  de latitud i longitud}.
+  Gpx significa GPs eXchange forma és un fitxer tipus XML, que serveix per emmagatzemar 
+  i intercanviar dades gps.Xml és molt potent perquè és extensible a qualsevol etiqueta que 
+  m'invento per exemple <brandcar>Seat</brandcar>
+  EL gpx té unes etiquetes propies, la primera és trk que es genera dintre de la function exportGPX()
+  Trk significa tracks o trajectes
+  */
 <button onclick="mesura()">Mesura</button>
 <button onclick="exportCSV()">Exporta CSV</button>
 <button onclick="exportGPX()">Exporta GPX</button>
