@@ -100,10 +100,16 @@ let polyline = L.polyline([], {color:'red'}).addTo(map);
 /*Polyline dibuixarà diverses linies rectes i cadascuna correspondrà a una trajectoria i la dibuixarà de color vermell.
 */
 function mesura() {
+  /*És una mfunció JavaScript que ens farà la mida de latitut i longitut, la crida un botò de la línia 49. */
   const estat = document.getElementById("estat");
+  /* estat és una variable però que té molts pocs valors i per això el definim com a const. Podrà ser diferents valors com obtenint GPS,
+  error,mesura guardada,... Si aquesta variable no l'haguessim posat en un <div>, l'usuari veurà una línia en blanc */
   estat.textContent = "🔍 Obtenint GPS amb precisió alta...";
 
   if (!navigator.geolocation) {
+    /*Si no està disponible la geolocalització en el navegador (admiració significa negació) i el if és un condicional 
+    ha de mostrar una finestra modal d'alerta.
+    La geolocalització és una API(interficie de programació d'aplicacions que sempre solicita permis a l'ususari*/
     alert("La geolocalització no és compatible amb aquest navegador.");
     return;
   }
