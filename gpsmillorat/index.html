@@ -66,8 +66,23 @@
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!--La línia 68 carrega leaflet.js i fa possible que funcionin els mapes.
+  Leaflet és una biblioteca javascript de codi obert. Codi obert vol dir que tothom té accés i pot veure internament el codi.
+  Per exemple google maps no és de codi obert, sino que pertany a Google, és codi tancato codi propietari i que no només no puc veure,
+  tot sino que tampoc el puc modificar (similar a libreoffice(és gratis i de codi obert, inclou editor de text o eitor de diapositives 
+  o editor de fulls de càlcul que es diu calc) i Microsoft Office(Concretament word, excel i powerpoint, són de pagament, codi tancat)).
+  Leaflet fa mapes interactius compatibles amb el móbil.
+  -->
 <script>
 let mesures = [];
+  /*let mesures, significa crear una variable global, perquè afecta a tot l'script que comença a la línia 76 i la inicialitzem amb un
+  conjunt de valors[] que es coneix xom array buit, amb la intenció d'emmagatzemar lectures gps de latitut i longitut.
+  let map crea una instancia de mapes tipus leaflet i l'assigna a un element, al que tingui una id anomenada map, que en aquest cas és un divisor o àrea buida de la pàgina web
+  està a la línia 66 i que és el lloc on apareixerà el mapa. I no hagués escrit a la linia 66, la 85 generarà un error, perquè no trobarà
+  un lloc on posar el mapa.
+  El setViex dona una vista inicial del mapa i les coordenades inicials són 0,0 que està situat en el Golf de Guinea i 2 és el zoom i el zoom 2
+  és molt 
+  */
 let map = L.map('map').setView([0,0], 2);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors'
