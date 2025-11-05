@@ -22,9 +22,9 @@
 <h2>Mesurador de Latitud i Longitud Avançat</h2>
 
 <label><b>Indica el lloc:</b></label>
-  /*Es una etiqueta per escriure que acompanya a un textbox o caixa de text o definida per un input
+  <!--Es una etiqueta per escriure que acompanya a un textbox o caixa de text o definida per un input
   L'input de més abaix no accepta numbers només accepta text i té un text per defecte definit per la propietat placeholder.
-  */
+  -->
 <input id="ubicacioInput" type="text" placeholder="Ex: Punt A">
   <!--A continuació tenim tres botons que quan els cliquem s'executan les funcions de la línia function mesura(){instuccions...}
   i els altres dos botons cridran les funcions de javascript gràcies a la propietat o atribut onclick
@@ -40,9 +40,12 @@
   Trk significa tracks o trajectes que són registres de camins o rutes seguits formats per una serie de punts (latitud, longitut ordenats 
   cronologicament)
     Dintre del trk hi ha una etiqueta <name> que hi ha el nom de la ruta, i a continuación hi ha una etiqueta trkpt, abans hi ha un trkseg
-      que es una secuencia de trkpt o track points que a vegades s'anomenen waypoints o punts de referencia, cada track point té una latitud i una longitud
+      que es una seqüència de trkpt o track points que a vegades s'anomenen waypoints o punts de referencia, cada track point té una latitud i una longitud
   per exemple <trkpt lat="41.842" lon="1.936"></trkpt>
-  -->
+      Podem afegir més etiquetes com per exemple <ele>, que significa elevació (elevation) que és l'alçada en metres del punt
+  GPX és un format obert, és a dir, que no hi ha cap empresa propietaria i és un format molt utilitzat per dispositius gps, per 
+  programes que utilitzem maped digitals o per apps que utilitzem rutes. És compatible amb GIS que són sistemes d'informació geogràfica 
+-->
 <button onclick="mesura()">Mesura</button>
 <button onclick="exportCSV()">Exporta CSV</button>
 <button onclick="exportGPX()">Exporta GPX</button>
