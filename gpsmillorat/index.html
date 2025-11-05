@@ -81,14 +81,24 @@ let mesures = [];
   està a la línia 66 i que és el lloc on apareixerà el mapa. I no hagués escrit a la linia 66, la 85 generarà un error, perquè no trobarà
   un lloc on posar el mapa.
   El setViex dona una vista inicial del mapa i les coordenades inicials són 0,0 que està situat en el Golf de Guinea i 2 és el zoom i el zoom 2
-  és molt 
+  és molt allunyat, vista global (zoom 8, veuriem Catalunya, zoom 13 veuriem Martorell, zoom 0 veuriem tot el món i zoom 18 veuriem l'institut).
+  
   */
 let map = L.map('map').setView([0,0], 2);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  /*L.titleLayer, title significa mosaic, per tant és una capa de mosaic de openstreatmap. Openstreatmap és la versió de codi obert i lliure del
+  codi tancat de google maps.
+  X i Y són les coordenades de latitud i longitut que ara són unes variables i Z és la variable del zoom.
+  */
   attribution: '© OpenStreetMap contributors'
+   /*Atribution és qui ho ha fet.*/
 }).addTo(map);
+  /* aadTo(map) afegeix les capes al mapa creat. Si la meva web té milers de peticions per segon pot tenir problemes perquè està anant a un
+  servidor lliure OpenStreetMap. Si passès això, podria descarregar OpenStreetMap en el nostre github, perquè és un codi obert.
+  */
 let polyline = L.polyline([], {color:'red'}).addTo(map);
-
+/*Polyline dibuixarà diverses linies rectes i cadascuna correspondrà a una trajectoria i la dibuixarà de color vermell.
+*/
 function mesura() {
   const estat = document.getElementById("estat");
   estat.textContent = "🔍 Obtenint GPS amb precisió alta...";
