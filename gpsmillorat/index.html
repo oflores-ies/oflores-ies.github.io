@@ -113,6 +113,12 @@ function mesura() {
     alert("La geolocalització no és compatible amb aquest navegador.");
     return;
   }
+  /* CurrentPositon és una part de l'API de Geolocation, pot funcionar amb un únic argument (posició) però pot contenir fins a 3.
+  El primer argument = CallBack d'èxit, funció anònima executada quuan el navegador obté la posició. Només rep un objecte anomenat "pos".
+  Segon argument= CallBack d'error, funció anònima executada quan el navegador no obté la posició.
+  Tercer argument = Objecte d'opcions, permet regular com funciona el gps.
+  La funció "=>" situada darrere de "(pos)" és la funció anònima perquè no s'escriu la paraula "function".
+  "(pos)" té uns arguments que són dinrte de ka seva posidivioa,escrib*/
 
   navigator.geolocation.getCurrentPosition(
     (pos) => {
