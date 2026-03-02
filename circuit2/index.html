@@ -1,0 +1,75 @@
+
+
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js" integrity="sha512-EBLzUL8XLl+va/zAsmXwS7Z2B1F9HUHkZwyS/VKwh3S7T/U0nF4BaU29EP/ZSf6zgiIxYAnKLu6bJ8dqpmX5uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/es/core.min.js" integrity="sha512-GuVoeU19Vs7el8GKo3lq2ogzwCIRBuQDnSL0rtHD4KVq3EymKgG4Uj/SEbbggJ+o+ocAcwdbn8hPSgdVPKdPlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/arduino.min.js" integrity="sha512-eh2wmSyRpwi1UaeOo63nlxYLgYkG2WAZ6grr5bXPHXwvyKe3oyY9gZBvoeJS20tNwqUIsrkWOca9ppRz2f50zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/es/languages/arduino.min.js" integrity="sha512-mE0sMLPrxRkL2hgpaCI99Gnh4nu758DLI/EcW+C4J7FkvFJpL0guBcSJjEYTaVa0yEQ2a0/l+ONtlDB0qnUh1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/arduino-light.min.css" integrity="sha512-M4nH9C7TRCVWLGruh9fHTfYxGWDiKpOGNjpfC9irhF06aLiYmJczZlW+/6IKOZ+75AGk4Wn4clgd6J13T0zzXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css" integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z4nvW1dqK0SKXLbn9h4KwZTNtAyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightElement(block);
+  });
+});</script>
+  </head>
+  <body>
+    <h1>PWM: Aconseguim una sortida analògica</h1>
+    <p> PWM significa Pulse With Modulation, en català mosulació de l'amplada del pols </p>
+    <p> A la següent imatge podem veure que si vull una sortida analògica en ardunio per controlar un LED
+      necesito donar polsos molt ràpidament en milisegons de cinc volts. Aquests polsos són d'ona cuadrada, és a dir, 
+      canvien de 0 a 5 volts de forma immediata. Els canvis són tant ràpids que l`'ull humà no el veu. Si fos un motor 
+      servo d'un braç robòtic la inèrcia del motor faria que no s'aturi el motor. </p>
+    <p> Sui dono 5 volts la meitat del temps pujant i baixant de 0 a 5 volts en ones cuadrades continuament sera com si dones 2,5 volts 
+      i el motor anira a la meitat de velocitat i el led s'encendra la meitat. </p>
+    <p>Pots veure una simulació de blonking amb arduino a continuació</p>
+    <p>En la següent imatge podem veure com funciona internament PWM. </p>
+    <img src="PWM.gif">
+    <p> A la imatge de més amun podem veure que amb 0 volts es mante tota l'estona a 0, i 5 volts es mantindra constant</p>
+    <p>Podem que el 50% de PWM vol dir que esta fent 0-1-0-1-0-1... de forma que l'amplada de 0 volts, és a dir, quan és 0 i es la mateixa que l'amplada de 1, que es 5 volts.
+    Això es un voltatge de 2,5V 
+    Com un arduino UNO té el PWM que funciona com a una sortida analògica de 8 bits, és a dir, 2<sup>8</sup> combinacions, de 0 a 255 significa que un voltatge de 2,5 volts donaria
+    127. La instrucció de arduino sera AnalogWrite(127);
+    Si es tracta d'un Arduino NANO ESP32 té la sortida analògica de 12 bits, és a dir, 2<sup>12</sup> combinacions, de 0 a 4095, amb un voltatge màxim de 3.3 volts. Per tant l'instrucció 
+    seria diferent: analogWrite(2047)</p>
+      
+    <p>Podem que el 25% de PWM vol dir que esta fent 0-0-0-1-0-0-0-1... de forma que l'amplada de 0 volts, és a dir, quan és 0 igual es tres vegades l'amplada de 1 que es 5 volts.
+    Això es un voltatge de 1,25V (0,25*5)
+    Com un arduino UNO té el PWM que funciona com a una sortida analògica de 8 bits, és a dir, 2<sup>8</sup> combinacions, de 0 a 255 significa que un voltatge de 1,25 volts donaria
+    64. La instrucció de arduino sera AnalogWrite(64);
+    Si es tracta d'un Arduino NANO ESP32 té la sortida analògica de 12 bits, és a dir, 2<sup>12</sup> combinacions, de 0 a 4095, amb un voltatge màxim de 3.3 volts. Per tant l'instrucció 
+    seria diferent: analogWrite(1023)</p>
+      
+    <p>Podem que el 75% de PWM vol dir que esta fent 1-1-1-0-1-1-1-0... de forma que l'amplada de 0 volts, és a dir, quan és 0 es una quarta part de l'amplada de 1, que es 5 volts.
+    Això es un voltatge de 3,75V (0,75*5) 
+    Com un arduino UNO té el PWM que funciona com a una sortida analògica de 8 bits, és a dir, 2<sup>8</sup> combinacions, de 0 a 255 significa que un voltatge de 3,75 volts donaria
+    191. La instrucció de arduino sera AnalogWrite(191);
+    Si es tracta d'un Arduino NANO ESP32 té la sortida analògica de 12 bits, és a dir, 2<sup>12</sup> combinacions, de 0 a 4095, amb un voltatge màxim de 3.3 volts. Per tant l'instrucció 
+    seria diferent: analogWrite(3070)</p>
+
+    <p>Arduino nano dona més varietat de intensitat analògica, per tant, més colors i més precisió.</p>
+        
+<iframe width="725" height="453" src="https://www.tinkercad.com/embed/fWkngIHegD2?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+      <pre><code class="language-arduino"> 
+// C++ code
+//Al principi sempre hi ha d'haver un comentari explicant que fa el codi següent.
+// El primer codi que s'ha d'executar, per asegurar que la placa es reconeguda i el port és reconegut
+//Aquest codi es blinking o parpelleig i encen o apaga el led
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(13, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(13, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+      </code></pre>
+  </body>
+</html>
+    
