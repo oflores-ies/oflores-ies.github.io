@@ -25,8 +25,10 @@
 </div>
 
 <script>
-$(function(){
-  $("#nav-placeholder").load("nav.html");
+document.addEventListener("DOMContentLoaded", async () => {
+  const response = await fetch("nav.html");
+  const html = await response.text();
+  document.getElementById("nav-placeholder").innerHTML = html;
 });
 </script>
  
